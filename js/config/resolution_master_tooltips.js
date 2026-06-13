@@ -10,7 +10,7 @@ export const tooltips = {
     // 输出值区域（可编辑）
     widthValueArea: "点击手动输入宽度。",
     heightValueArea: "点击手动输入高度。",
-    batchSizeValueArea: "点击设置每批次创建的图像数量。",
+    batchSizeValueArea: "滑动或点击输入每批次创建的图像数量。",
     latValueArea: "选择潜空间类型。大多数模型使用 4x8，Flux.2 使用 128x16。",
     
     // 缩放控制（仅按钮和下拉框）

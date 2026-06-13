@@ -1,57 +1,6 @@
 // Preset categories for ResolutionMaster
 
 export const presetCategories = {
-    'Standard': {
-        '1:1 Square': { width: 512, height: 512 },
-        '1:2 Tall': { width: 512, height: 1024 },
-        '1:3 Ultra Tall': { width: 512, height: 1536 },
-        '2:3 Portrait': { width: 512, height: 768 },
-        '3:4 Portrait': { width: 576, height: 768 },
-        '4:5 Portrait': { width: 512, height: 640 },
-        '4:7 Phone': { width: 512, height: 896 },
-        '5:12 Banner': { width: 512, height: 1228 },
-        '7:9 Vertical': { width: 512, height: 658 },
-        '9:16 Mobile': { width: 576, height: 1024 },
-        '9:21 Ultra Mobile': { width: 512, height: 1194 },
-        '10:16 Monitor': { width: 640, height: 1024 },
-        '13:19 Tall Screen': { width: 512, height: 748 },
-        '3:2 Landscape': { width: 768, height: 512 },
-        '4:3 Classic': { width: 512, height: 384 },
-        '16:9 Widescreen': { width: 768, height: 432 },
-        '21:9 Ultrawide': { width: 1024, height: 439 }
-    },
-    'SDXL': {
-        '1:1 Square': { width: 1024, height: 1024 },
-        '3:4 Portrait': { width: 768, height: 1024 },
-        '4:5 Portrait': { width: 915, height: 1144 },
-        '5:12 Portrait': { width: 640, height: 1536 },
-        '7:9 Portrait': { width: 896, height: 1152 },
-        '9:16 Portrait': { width: 768, height: 1344 },
-        '13:19 Portrait': { width: 832, height: 1216 },
-        '3:2 Landscape': { width: 1254, height: 836 }
-    },
-    'Flux': {
-        '1:1 Square (Standard)': { width: 1024, height: 1024 },
-        '1:1 Square (Medium)': { width: 1408, height: 1408 },
-        '1:1 Square (High)': { width: 1440, height: 1440 },
-        '2:3 Portrait': { width: 832, height: 1248 },
-        '3:4 Portrait': { width: 896, height: 1184 },
-        '4:5 Portrait': { width: 928, height: 1152 },
-        '9:16 Portrait': { width: 768, height: 1344 },
-        '9:21 Portrait': { width: 672, height: 1440 },
-    },
-    'Flux.2': {
-        '1:1 Square': { width: 2048, height: 2048 },
-        '1:1 Square Native': { width: 2336, height: 2336 },
-        '2:3 Portrait': { width: 1632, height: 2448 },
-        '3:4 Portrait': { width: 1728, height: 2304 },
-        '4:5 Portrait': { width: 1792, height: 2240 },
-        '9:16 Portrait': { width: 1472, height: 2624 },
-        '3:2 Landscape': { width: 2448, height: 1632 },
-        '4:3 Landscape': { width: 2304, height: 1728 },
-        '16:9 Landscape': { width: 2624, height: 1472 },
-        '21:9 Ultrawide': { width: 2912, height: 1248 },
-    },
     'WAN': {
        // Community Presets
        '16:9 Landscape-1280': { width: 1280, height: 720 },
@@ -66,14 +15,6 @@ export const presetCategories = {
        '3:2 Landscape': { width: 1080, height: 720 },
        '4:3 Landscape': { width: 960, height: 720 },
        '21:9 Landscape': { width: 1680, height: 720 }
-    },
-    'HiDream Dev': {
-        '1:1 Square-1024': { width: 1024, height: 1024 },
-        '1:1 Square-1280': { width: 1280, height: 1280 },
-        '1:1 Square-1536': { width: 1536, height: 1536 },
-        '16:9 Landscape': { width: 1360, height: 768 },
-        '3:2 Landscape': { width: 1248, height: 832 },
-        '4:3 Landscape': { width: 1168, height: 880 },
     },
     'Qwen-Image': {
         '1:1 Square (Default)': { width: 1328, height: 1328 },
@@ -248,6 +189,23 @@ export const presetCategories = {
         '1:1 Square-1536': { width: 1536, height: 1536 },
         '2:3 Portrait-1216': { width: 1216, height: 1824 },
         '3:2 Landscape-1824': { width: 1824, height: 1216 },
+    },
+    'LTX2': {
+        // Square
+        '1:1 Square-640': { width: 640, height: 640 },
+        '1:1 Square-768': { width: 768, height: 768 },
+        // Portrait
+        '2:3 Portrait-512': { width: 512, height: 768 },
+        '3:4 Portrait-576': { width: 576, height: 768 },
+        '9:16 Portrait-576': { width: 576, height: 1024 },
+        '9:16 Portrait-768': { width: 768, height: 1344 },
+        // Landscape
+        '3:2 Landscape-768': { width: 768, height: 512 },
+        '4:3 Landscape-768': { width: 768, height: 576 },
+        '16:9 Widescreen-768': { width: 768, height: 432 },
+        '16:9 Widescreen-1024': { width: 1024, height: 576 },
+        '16:9 Widescreen-1280': { width: 1280, height: 720 },
+        '21:9 Ultrawide-1024': { width: 1024, height: 439 },
     },
     'Display Resolutions': {
         'CIF': { width: 352, height: 288 },
