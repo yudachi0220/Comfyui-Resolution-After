@@ -777,7 +777,6 @@ export const interactionMethods = {
             snapSlider: { prop: 'snapValue', min: props.action_slider_snap_min, max: props.action_slider_snap_max, step: props.action_slider_snap_step },
             scaleSlider: { prop: 'upscaleValue', min: props.scaling_slider_min, max: props.scaling_slider_max, step: props.scaling_slider_step, updateOn: 'manual' },
             megapixelsSlider: { prop: 'targetMegapixels', min: props.megapixels_slider_min, max: props.megapixels_slider_max, step: props.megapixels_slider_step, updateOn: 'megapixels' },
-            batchSlider: { prop: 'batch_size', min: 1, max: 128, step: 1 },
             widthSlider: { prop: 'valueX', min: props.manual_slider_min_w, max: props.manual_slider_max_w, step: props.manual_slider_step_w },
             heightSlider: { prop: 'valueY', min: props.manual_slider_min_h, max: props.manual_slider_max_h, step: props.manual_slider_step_h }
         };
@@ -799,11 +798,6 @@ export const interactionMethods = {
                 this.setDimensions(props.valueX, this.heightWidget.value);
             } else if (sliderName === 'heightSlider') {
                 this.setDimensions(this.widthWidget.value, props.valueY);
-            } else if (sliderName === 'batchSlider') {
-                if (this.batchSizeWidget) {
-                    this.batchSizeWidget.value = Math.round(props.batch_size);
-                }
-                this.handlePropertyChange();
             } else if (sliderName.includes('Slider')) {
                 this.handlePropertyChange();
             }
