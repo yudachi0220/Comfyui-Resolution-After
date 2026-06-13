@@ -366,7 +366,6 @@ export const nodeLifecycleMethods = {
             ...Object.values(this.backendFallbackWidgets),
             rescaleModeWidget,
             rescaleValueWidget,
-            batchSizeWidget
         ].forEach(widget => {
             if (widget) {
                 widget.hidden = true;
