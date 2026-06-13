@@ -186,16 +186,14 @@ export const drawingMethods = {
         ctx.textAlign = "right";
         ctx.textBaseline = "middle";
 
-        if (this.widthWidget && this.heightWidget && this.batchSizeWidget) {
+        if (this.widthWidget && this.heightWidget) {
             const y_offset_1 = 5 + (LiteGraph.NODE_SLOT_HEIGHT * 0.5);
             const y_offset_2 = 5 + (LiteGraph.NODE_SLOT_HEIGHT * 1.5);
             const y_offset_3 = 5 + (LiteGraph.NODE_SLOT_HEIGHT * 2.5);
             const y_offset_4 = 5 + (LiteGraph.NODE_SLOT_HEIGHT * 3.5);
             const valueAreaWidth = 60; 
-            const batchSizeAreaWidth = 35; 
             const valueAreaHeight = 20;
             const valueAreaX = node.size[0] - valueAreaWidth - 5;
-            const batchSizeAreaX = node.size[0] - batchSizeAreaWidth - 5;
             this.drawOutputValueArea(ctx, 'widthValueArea', valueAreaX, y_offset_1 - valueAreaHeight/2,
                 valueAreaWidth, valueAreaHeight, this.widthWidget.value.toString(), y_offset_1,
                 [136, 153, 255], "#89F", "#89F");
@@ -204,10 +202,6 @@ export const drawingMethods = {
                 [248, 136, 153], "#F89", "#F89");
             ctx.fillStyle = "#9F8";
             ctx.fillText(props.rescaleValue.toFixed(2), node.size[0] - 20, y_offset_3);
-            this.drawOutputValueArea(ctx, 'batchSizeValueArea', batchSizeAreaX, y_offset_4 - valueAreaHeight/2,
-                batchSizeAreaWidth, valueAreaHeight, this.batchSizeWidget.value.toString(), y_offset_4,
-                [255, 136, 187], "#FAB", "#F8B");
-            const y_offset_5 = 5 + (LiteGraph.NODE_SLOT_HEIGHT * 4.5);
 
             // Create clickable area for LAT selector
             const latAreaWidth = 50;
@@ -216,17 +210,17 @@ export const drawingMethods = {
 
             this.controls.latValueArea = {
                 x: latAreaX,
-                y: y_offset_5 - 10,
+                y: y_offset_4 - 10,
                 w: latAreaWidth,
                 h: latAreaHeight
             };
 
-            this.drawValueAreaHoverBackground(ctx, 'latValueArea', latAreaX, y_offset_5 - 10, latAreaWidth, latAreaHeight, [248, 136, 187]);
+            this.drawValueAreaHoverBackground(ctx, 'latValueArea', latAreaX, y_offset_4 - 10, latAreaWidth, latAreaHeight, [248, 136, 187]);
 
             ctx.fillStyle = this.hoverElement === 'latValueArea' ? "#FAB" : "#F8B"; 
             ctx.font = "bold 12px Arial";
             ctx.textAlign = "right";
-            ctx.fillText("LAT", node.size[0] - 20, y_offset_5);
+            ctx.fillText("LAT", node.size[0] - 20, y_offset_4);
 
             // Draw latent type info in smaller gray font below LAT
             if (this.latentTypeWidget) {
@@ -235,7 +229,7 @@ export const drawingMethods = {
                 ctx.fillStyle = this.hoverElement === 'latValueArea' ? "#999" : "#777"; 
                 ctx.font = "9px Arial";
                 ctx.textAlign = "right";
-                ctx.fillText(shortType, node.size[0] - 20, y_offset_5 + 12);
+                ctx.fillText(shortType, node.size[0] - 20, y_offset_4 + 12);
             }
         }
     },
