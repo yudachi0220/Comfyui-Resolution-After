@@ -765,6 +765,7 @@ export const drawingMethods = {
         const labelWidth = 80;
         const sliderX = margin + labelWidth + gap;
         const sliderWidth = node.size[0] - sliderX - margin;
+        const batchValue = parseInt(props.batch_size) || 1;
 
         // 标签
         ctx.fillStyle = "#ccc";
@@ -776,9 +777,16 @@ export const drawingMethods = {
         // 滑条
         this.controls.batchSlider = { x: sliderX, y, w: sliderWidth, h: 24 };
         this.drawSlider(ctx, sliderX, y + 1, sliderWidth, 24, 
-            parseInt(props.batch_size) || 1, 1, 128, 1);
+            batchValue, 1, 128, 1);
 
-        return 30;
+        // 当前数值
+        ctx.fillStyle = "#FC4";
+        ctx.font = "10px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.fillText(batchValue, sliderX + sliderWidth / 2, y + 26);
+
+        return 35;
     },
 
     drawSliderMode(ctx, y) {

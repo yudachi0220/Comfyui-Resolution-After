@@ -41,7 +41,8 @@ export const nodeLifecycleMethods = {
             actions: this.collapsedSections?.actions ? 25 : 55,
             scaling: this.collapsedSections?.scaling ? 25 : 130,
             autoDetect: this.collapsedSections?.autoDetect ? 25 : 135,
-            presets: this.collapsedSections?.presets ? 25 : 55
+            presets: this.collapsedSections?.presets ? 25 : 55,
+            batch: this.collapsedSections?.batch ? 25 : 60
         };
         Object.values(sectionHeights).forEach(height => {
             currentY += height + spacing;
