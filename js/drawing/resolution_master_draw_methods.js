@@ -62,6 +62,11 @@ export const drawingMethods = {
                         if (!preview) return this.drawPresetSection(ctx, y);
                         return 30;
                     });
+
+                    collapsibleSection("Batch Size", "batch", (ctx, y, preview) => {
+                        if (!preview) return this.drawBatchSection(ctx, y);
+                        return 35;
+                    });
                     if (props.showCalcInfo && props.selectedCategory) {
                         const messageHeight = this.drawInfoMessage(ctx, currentY);
                         if (messageHeight > 0) {
@@ -751,7 +756,30 @@ export const drawingMethods = {
         }
         return 0;
     },
+    
+    drawBatchSection(ctx, y) {
+        const node = this.node;
+        const props = node.properties;
+        const margin = 20;
+        const gap = 8;
+        const labelWidth = 80;
+        const sliderX = margin + labelWidth + gap;
+        const sliderWidth = node.size[0] - sliderX - margin;
 
+        // 标签
+        ctx.fillStyle = "#ccc";
+        ctx.font = "12px Arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Batch Size:", margin, y + 12);
+
+        // 滑条
+        this.controls.batchSlider = { x: sliderX, y, w: sliderWidth, h: 24 };
+        this.drawSlider(ctx, sliderX, y + 1, sliderWidth, 24, 
+            parseInt(props.batch_size) || 1, 1, 128, 1);
+
+        return 30;
+    },
 
     drawSliderMode(ctx, y) {
         const node = this.node;

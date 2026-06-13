@@ -67,6 +67,7 @@ export const DEFAULT_NODE_PROPERTIES = {
     section_autoDetect_collapsed: false,
     section_presets_collapsed: false,
     section_extraControls_collapsed: false,
+    section_batch_collapsed: false,
     preferred_compact_height: null,
     preferred_expanded_height: null,
     dropdown_resolution_expanded: false,

@@ -363,6 +363,7 @@ export const nodeLifecycleMethods = {
             autoDetectSourceWidget,
             autoDetectWidthWidget,
             autoDetectHeightWidget,
+            batchSizeWidget,
             ...Object.values(this.backendFallbackWidgets),
             rescaleModeWidget,
             rescaleValueWidget,
