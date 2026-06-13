@@ -45,9 +45,9 @@ class ResolutionMaster:
                     ["latent_4x8", "latent_128x16"],
                     {"tooltip": "选择潜空间类型。4x8 适用于 WAN/Anima/Z-Image/Qwen，128x16 适用于 LTX2。"}
                 ),
-                "batch_size": ("INT", {"default": 1, "min": 1, "max": 128, "step": 1, "display": "number", "tooltip": "单批次创建的潜空间图像数量。使用滑块或直接输入控制。"}),
                 "width": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "最终输出宽度（像素）。"}),
                 "height": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "最终输出高度（像素）。"}),
+                "batch_size": ("INT", {"default": 1, "min": 1, "max": 128, "step": 1, "display": "number", "tooltip": "批次大小。使用滑块或直接输入数字控制每批次创建的潜空间数量。"}),
                 "auto_detect": ("BOOLEAN", {"default": False, "label_on": "从输入自动检测", "label_off": "手动", "tooltip": "从连接的输入图像自动检测尺寸。"}),
                 "auto_detect_source": ("STRING", {"default": "backend", "tooltip": "分辨率主控界面使用的技术设置。"}),
                 "auto_detect_width": ("INT", {"default": 0, "min": 0, "max": 32768, "tooltip": "自动检测到的输入宽度。"}),
