@@ -139,7 +139,7 @@ export class CustomValueDialogManager {
         const applyBtn = dialog.querySelector('#applyBtn');
         
         if (valueType === 'Scale Factor') {
-            infoMsg.textContent = 'Tip: Use /2 for 0.5x, /4 for 0.25x, etc.';
+            infoMsg.textContent = '提示：使用 /2 表示 0.5倍，/4 表示 0.25倍 等。';
         }
         
         // Block decimal characters for integer-only inputs
@@ -189,7 +189,7 @@ export class CustomValueDialogManager {
                 applyBtn.disabled = true; applyBtn.style.opacity = '0.5';
                 return false;
             } else if (integerOnly && !Number.isInteger(value)) {
-                validationMsg.textContent = 'Value must be a whole number';
+                validationMsg.textContent = '请输入整数';
                 applyBtn.disabled = true; applyBtn.style.opacity = '0.5';
                 return false;
             } else {

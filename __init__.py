@@ -6,7 +6,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "ResolutionMaster": "Resolution Master"
+    "ResolutionMaster": "分辨率主控 (Resolution Master)"
 }
 
 WEB_DIRECTORY = "./js"

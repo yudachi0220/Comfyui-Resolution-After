@@ -221,6 +221,34 @@ export const presetCategories = {
         '4:3 Academy': { width: 1440, height: 1080 },
         '1.33:1 Classic': { width: 1436, height: 1080 }
     },
+    'Anima': {
+        // SD 1.5 基础分辨率
+        '1:1 Square-512': { width: 512, height: 512 },
+        '1:1 Square-576': { width: 576, height: 576 },
+        '2:3 Portrait-512': { width: 512, height: 768 },
+        '3:4 Portrait-512': { width: 512, height: 683 },
+        '4:5 Portrait-512': { width: 512, height: 640 },
+        '9:16 Portrait-512': { width: 576, height: 1024 },
+        '3:2 Landscape-768': { width: 768, height: 512 },
+        '16:9 Widescreen-768': { width: 768, height: 432 },
+        // SDXL 基础分辨率
+        '1:1 Square-1024': { width: 1024, height: 1024 },
+        '1:1 Square-1152': { width: 1152, height: 1152 },
+        '2:3 Portrait-832': { width: 832, height: 1248 },
+        '3:4 Portrait-896': { width: 896, height: 1195 },
+        '4:5 Portrait-896': { width: 896, height: 1120 },
+        '7:9 Portrait-896': { width: 896, height: 1152 },
+        '9:16 Portrait-768': { width: 768, height: 1344 },
+        '13:19 Portrait-832': { width: 832, height: 1216 },
+        '3:2 Landscape-1216': { width: 1216, height: 832 },
+        '4:3 Landscape-1152': { width: 1152, height: 864 },
+        '16:9 Widescreen-1344': { width: 1344, height: 768 },
+        '21:9 Ultrawide-1536': { width: 1536, height: 640 },
+        // 高分辨率推荐
+        '1:1 Square-1536': { width: 1536, height: 1536 },
+        '2:3 Portrait-1216': { width: 1216, height: 1824 },
+        '3:2 Landscape-1824': { width: 1824, height: 1216 },
+    },
     'Display Resolutions': {
         'CIF': { width: 352, height: 288 },
         'SVGA': { width: 800, height: 600 },

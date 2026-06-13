@@ -94,7 +94,7 @@ export class SearchableDropdown {
             `;
             
             const modeLabel = document.createElement('span');
-            modeLabel.textContent = 'View:';
+            modeLabel.textContent = '视图:';
             modeLabel.style.cssText = `
                 color: #aaa;
                 font-size: 11px;
@@ -168,7 +168,7 @@ export class SearchableDropdown {
         // Create search input
         this.searchInput = document.createElement('input');
         this.searchInput.type = 'text';
-        this.searchInput.placeholder = 'Search...';
+        this.searchInput.placeholder = '搜索...';
         this.searchInput.className = 'resolution-master-searchable-dropdown-search';
         this.searchInput.addEventListener('input', () => this.filterItems());
         this.searchInput.addEventListener('keydown', (e) => this.handleKeyDown(e));
@@ -182,7 +182,7 @@ export class SearchableDropdown {
         // Add expand button
         this.expandButton = document.createElement('button');
         this.expandButton.className = 'resolution-master-searchable-dropdown-expand-btn';
-        this.expandButton.textContent = 'Show All';
+        this.expandButton.textContent = '显示全部';
         this.expandButton.addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggleExpand();
@@ -228,13 +228,13 @@ export class SearchableDropdown {
             if (this.allowCustomValues && this.searchInput.value.trim()) {
                 // Create "No results found" text
                 const noResultsText = document.createElement('div');
-                noResultsText.textContent = 'No results found';
+                noResultsText.textContent = '未找到结果';
                 noResults.appendChild(noResultsText);
                 
                 // Add button that acts like Enter key - ABOVE the hint text
                 const useCustomButton = document.createElement('button');
                 useCustomButton.className = 'resolution-master-searchable-dropdown-use-custom-btn';
-                useCustomButton.textContent = 'Use Custom Value';
+                useCustomButton.textContent = '使用自定义值';
                 useCustomButton.addEventListener('click', (e) => {
                     e.stopPropagation();
                     this.selectItem(this.searchInput.value.trim());
@@ -244,10 +244,10 @@ export class SearchableDropdown {
                 // Add hint text below the button
                 const hintText = document.createElement('div');
                 hintText.className = 'resolution-master-searchable-dropdown-hint';
-                hintText.textContent = 'Press Enter to use custom value';
+                hintText.textContent = '按回车键使用自定义值';
                 noResults.appendChild(hintText);
             } else {
-                noResults.textContent = 'No results found';
+                noResults.textContent = '未找到结果';
             }
             
             this.itemsContainer.appendChild(noResults);
@@ -483,7 +483,7 @@ export class SearchableDropdown {
         // Now apply the expanded heights
         this.itemsContainer.style.maxHeight = `${expandedItemsHeight}px`;
         this.container.style.maxHeight = `${totalContainerHeight}px`;
-        this.expandButton.textContent = 'Show Less';
+        this.expandButton.textContent = '收起';
     }
 
     /**
@@ -536,12 +536,12 @@ export class SearchableDropdown {
             // Now apply the expanded heights
             this.itemsContainer.style.maxHeight = `${expandedItemsHeight}px`;
             this.container.style.maxHeight = `${totalContainerHeight}px`;
-            this.expandButton.textContent = 'Show Less';
+            this.expandButton.textContent = '收起';
         } else {
             // Collapse back to default
             this.itemsContainer.style.maxHeight = `${this.DEFAULT_MAX_HEIGHT}px`;
             this.container.style.maxHeight = '400px';
-            this.expandButton.textContent = 'Show All';
+            this.expandButton.textContent = '显示全部';
             
             // Restore original position
             this.container.style.top = `${this.originalTop}px`;

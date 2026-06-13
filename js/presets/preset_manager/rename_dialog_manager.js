@@ -62,7 +62,7 @@ export class RenameDialogManager {
             const newName = input.value.trim();
             
             if (!newName) {
-                validationMsg.textContent = 'Category name cannot be empty';
+                validationMsg.textContent = '分类名称不能为空';
                 applyBtn.disabled = true;
                 applyBtn.style.opacity = '0.5';
                 applyBtn.style.cursor = 'not-allowed';

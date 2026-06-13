@@ -117,7 +117,7 @@ export class AspectRatioSelector {
         `;
         
         const modeLabel = document.createElement('span');
-        modeLabel.textContent = 'View:';
+        modeLabel.textContent = '视图:';
         modeLabel.style.cssText = `
             color: #aaa;
             font-size: 11px;
@@ -126,7 +126,7 @@ export class AspectRatioSelector {
         
         const modeToggle = document.createElement('button');
         const useVisualMode = options.currentMode !== 'list';
-        modeToggle.textContent = useVisualMode ? '🎨 Visual' : '📝 List';
+        modeToggle.textContent = useVisualMode ? '🎨 可视化' : '📝 列表';
         modeToggle.style.cssText = `
             padding: 4px 12px;
             background: ${useVisualMode ? 'rgba(90, 170, 255, 0.2)' : 'rgba(100, 100, 100, 0.3)'};
@@ -176,7 +176,7 @@ export class AspectRatioSelector {
 
         const searchInput = document.createElement('input');
         searchInput.type = 'text';
-        searchInput.placeholder = 'Search presets...';
+        searchInput.placeholder = '搜索预设...';
         searchInput.style.cssText = `
             width: 100%;
             padding: 6px 8px;

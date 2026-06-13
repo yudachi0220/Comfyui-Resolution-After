@@ -347,7 +347,7 @@ export class JSONEditorDialog {
         const cancelBtn = document.createElement('button');
         cancelBtn.id = 'json-editor-cancel-btn';
         cancelBtn.className = 'resolution-master-json-editor-cancel-btn';
-        cancelBtn.textContent = 'Cancel';
+        cancelBtn.textContent = '取消';
         cancelBtn.addEventListener('click', onClose);
         
         return cancelBtn;
@@ -363,7 +363,7 @@ export class JSONEditorDialog {
         const applyBtn = document.createElement('button');
         applyBtn.id = 'json-editor-apply-btn';
         applyBtn.className = 'resolution-master-json-editor-apply-btn';
-        applyBtn.textContent = 'Apply Changes';
+        applyBtn.textContent = '应用更改';
         applyBtn.addEventListener('click', () => {
             try {
                 // Get JSON from editor

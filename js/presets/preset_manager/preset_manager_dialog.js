@@ -346,7 +346,7 @@ export class PresetManagerDialog {
 
         // Validation
         if (!category) {
-            validationMsg.textContent = 'Category is required';
+            validationMsg.textContent = '请输入分类名称';
             categoryInput.focus();
             return;
         }
@@ -525,7 +525,7 @@ export class PresetManagerDialog {
                 gap: 8px;
             `;
             const emptyMsg = document.createElement('div');
-            emptyMsg.textContent = 'No presets in this category yet. Add some above!';
+            emptyMsg.textContent = '此分类暂无预设，请在上方添加！';
             emptyMsg.style.cssText = `
                 grid-column: 1 / -1;
                 text-align: center;
@@ -637,7 +637,7 @@ export class PresetManagerDialog {
         const quickAddTitle = document.getElementById('quick-add-title');
 
         if (!this.selectedCategory) {
-            validationMsg.textContent = 'Please select a category first';
+            validationMsg.textContent = '请先选择一个分类';
             return;
         }
 
@@ -675,7 +675,7 @@ export class PresetManagerDialog {
             );
             
             if (!success) {
-                validationMsg.textContent = 'Failed to update preset. It may already exist.';
+                validationMsg.textContent = '更新预设失败，可能已存在。';
                 return;
             }
             

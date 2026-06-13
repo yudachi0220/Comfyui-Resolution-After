@@ -19,7 +19,7 @@ export class PresetAddViewRenderer {
         // Title
         const titleDiv = document.createElement('div');
         titleDiv.className = 'resolution-master-preset-add-title';
-        titleDiv.textContent = 'Add Presets to Category';
+        titleDiv.textContent = '向分类添加预设';
         container.appendChild(titleDiv);
 
         // Category selection section
@@ -57,7 +57,7 @@ export class PresetAddViewRenderer {
 
         const categoryLabel = document.createElement('div');
         categoryLabel.className = 'resolution-master-preset-add-category-label';
-        categoryLabel.textContent = 'Category';
+        categoryLabel.textContent = '分类';
         categorySection.appendChild(categoryLabel);
 
         // Container for category button and rename button
@@ -181,13 +181,13 @@ export class PresetAddViewRenderer {
         nameGroup.style.cssText = 'display: flex; flex-direction: column; gap: 4px;';
         
         const nameLabel = document.createElement('label');
-        nameLabel.textContent = 'Name';
+        nameLabel.textContent = '名称';
         nameLabel.style.cssText = 'color: #ccc; font-size: 11px; font-weight: bold;';
         
         const nameInput = document.createElement('input');
         nameInput.id = 'quick-name-input';
         nameInput.type = 'text';
-        nameInput.placeholder = 'Preset name';
+        nameInput.placeholder = '预设名称';
         nameInput.value = this.parentDialog.editingPresetData ? this.parentDialog.editingPresetData.name : '';
         nameInput.style.cssText = `
             padding: 6px;
@@ -299,7 +299,7 @@ export class PresetAddViewRenderer {
         `;
 
         const previewLabel = document.createElement('div');
-        previewLabel.textContent = 'Preview:';
+        previewLabel.textContent = '预览:';
         const labelColor = this.parentDialog.editingPresetData ? '#5f5' : '#5af';
         previewLabel.style.cssText = `color: ${labelColor}; font-size: 11px; font-weight: bold;`;
 

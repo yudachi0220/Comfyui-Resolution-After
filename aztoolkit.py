@@ -38,37 +38,37 @@ class ResolutionMaster:
         return {
             "required": {
                 "mode": (
-                    ["Manual", "Manual Sliders", "Common Resolutions", "Aspect Ratios"],
-                    {"tooltip": "Choose how to control the output size. Manual mode uses the Resolution Master canvas."}
+                    ["手动 (Manual)", "手动滑块 (Manual Sliders)", "常用分辨率 (Common Resolutions)", "宽高比 (Aspect Ratios)"],
+                    {"tooltip": "选择输出尺寸控制方式。手动模式使用分辨率主控画布。"}
                 ),
                 "latent_type": (
                     ["latent_4x8", "latent_128x16"],
-                    {"default": "latent_4x8", "tooltip": "Choose the latent type. Use 4x8 for most models, or 128x16 for Flux.2."}
+                    {"default": "latent_4x8", "tooltip": "选择潜空间类型。大多数模型使用 4x8，Flux.2 使用 128x16。"}
                 ),
-                "width": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "Final output width in pixels."}),
-                "height": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "Final output height in pixels."}),
-                "auto_detect": ("BOOLEAN", {"default": False, "label_on": "Auto-detect from input", "label_off": "Manual", "tooltip": "Detect the size from the connected input image."}),
-                "auto_detect_source": ("STRING", {"default": "backend", "tooltip": "Technical setting used by the Resolution Master interface."}),
-                "auto_detect_width": ("INT", {"default": 0, "min": 0, "max": 32768, "tooltip": "Detected input width used by auto-detect."}),
-                "auto_detect_height": ("INT", {"default": 0, "min": 0, "max": 32768, "tooltip": "Detected input height used by auto-detect."}),
-                "auto_fit_on_change": ("BOOLEAN", {"default": False, "tooltip": "When a new image is detected, fit it to the closest preset automatically."}),
-                "auto_resize_on_change": ("BOOLEAN", {"default": False, "tooltip": "When a new image is detected, resize it automatically using the selected scaling mode."}),
-                "auto_snap_on_change": ("BOOLEAN", {"default": False, "tooltip": "When a new image is detected, round its size to the selected snap step."}),
-                "smart_fit": ("BOOLEAN", {"default": False, "tooltip": "Fit to the closest preset aspect ratio while keeping the size close to the current resolution."}),
-                "use_custom_calc": ("BOOLEAN", {"default": False, "tooltip": "When a new image is detected, apply the selected model or category size rules automatically."}),
-                "preserve_scaling_ratio": ("BOOLEAN", {"default": False, "tooltip": "Keep the image proportions while scaling."}),
-                "selected_category": ("STRING", {"default": "", "tooltip": "Selected preset category."}),
-                "snap_value": ("INT", {"default": 64, "min": 1, "max": 32768, "tooltip": "Snap step used when rounding width and height."}),
-                "upscale_value": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 100.0, "tooltip": "Manual scale multiplier."}),
-                "target_resolution": ("INT", {"default": 1080, "min": 1, "max": 32768, "tooltip": "Target p-resolution used for scaling."}),
-                "target_megapixels": ("FLOAT", {"default": 2.0, "min": 0.0, "max": 1000.0, "tooltip": "Target megapixels used for scaling."}),
-                "auto_detect_presets_json": ("STRING", {"default": "{}", "tooltip": "Technical preset data used by auto-detect."}),
-                "rescale_mode": ("STRING", {"default": "resolution", "tooltip": "Scaling mode used for the Rescale Factor output."}),
-                "rescale_value": ("FLOAT", {"default": 1.0, "step": 0.001, "min": 0.0, "max": 100.0, "tooltip": "Current Rescale Factor value shown by the interface."}),
-                "batch_size": ("INT", {"default": 1, "min": 1, "max": 4096, "tooltip": "How many latent images to create in one batch."}),
+                "width": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "最终输出宽度（像素）。"}),
+                "height": ("INT", {"default": 512, "min": 0, "max": 32768, "step": 64, "tooltip": "最终输出高度（像素）。"}),
+                "auto_detect": ("BOOLEAN", {"default": False, "label_on": "从输入自动检测", "label_off": "手动", "tooltip": "从连接的输入图像自动检测尺寸。"}),
+                "auto_detect_source": ("STRING", {"default": "backend", "tooltip": "分辨率主控界面使用的技术设置。"}),
+                "auto_detect_width": ("INT", {"default": 0, "min": 0, "max": 32768, "tooltip": "自动检测到的输入宽度。"}),
+                "auto_detect_height": ("INT", {"default": 0, "min": 0, "max": 32768, "tooltip": "自动检测到的输入高度。"}),
+                "auto_fit_on_change": ("BOOLEAN", {"default": False, "tooltip": "检测到新图像时，自动适配到最接近的预设。"}),
+                "auto_resize_on_change": ("BOOLEAN", {"default": False, "tooltip": "检测到新图像时，使用选定的缩放模式自动调整大小。"}),
+                "auto_snap_on_change": ("BOOLEAN", {"default": False, "tooltip": "检测到新图像时，按选定的对齐步长取整。"}),
+                "smart_fit": ("BOOLEAN", {"default": False, "tooltip": "适配到最接近的预设宽高比，同时保持尺寸接近当前分辨率。"}),
+                "use_custom_calc": ("BOOLEAN", {"default": False, "tooltip": "检测到新图像时，自动应用所选模型或类别的尺寸规则。"}),
+                "preserve_scaling_ratio": ("BOOLEAN", {"default": False, "tooltip": "缩放时保持图像比例。"}),
+                "selected_category": ("STRING", {"default": "", "tooltip": "选中的预设类别。"}),
+                "snap_value": ("INT", {"default": 64, "min": 1, "max": 32768, "tooltip": "取整宽高时使用的对齐步长。"}),
+                "upscale_value": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 100.0, "tooltip": "手动缩放倍率。"}),
+                "target_resolution": ("INT", {"default": 1080, "min": 1, "max": 32768, "tooltip": "缩放时使用的目标 p-分辨率。"}),
+                "target_megapixels": ("FLOAT", {"default": 2.0, "min": 0.0, "max": 1000.0, "tooltip": "缩放时使用的目标百万像素数。"}),
+                "auto_detect_presets_json": ("STRING", {"default": "{}", "tooltip": "自动检测使用的技术预设数据。"}),
+                "rescale_mode": ("STRING", {"default": "resolution", "tooltip": "重缩放因子输出使用的缩放模式。"}),
+                "rescale_value": ("FLOAT", {"default": 1.0, "step": 0.001, "min": 0.0, "max": 100.0, "tooltip": "界面显示的当前重缩放因子值。"}),
+                "batch_size": ("INT", {"default": 1, "min": 1, "max": 4096, "tooltip": "单批次创建的潜空间图像数量。已合并到 latent 输出中。"}),
             },
             "optional": {
-                "input_image": ("IMAGE", {"tooltip": "Optional image used for auto-detecting width and height."}),
+                "input_image": ("IMAGE", {"tooltip": "用于自动检测宽高的可选图像。"}),
             },
             "hidden": {
                 "unique_id": "UNIQUE_ID",
@@ -76,18 +76,17 @@ class ResolutionMaster:
             },
         }
 
-    RETURN_TYPES = ("INT", "INT", "FLOAT", "INT", "LATENT")
-    RETURN_NAMES = ("width", "height", "rescale_factor", "batch_size", "latent")
+    RETURN_TYPES = ("INT", "INT", "FLOAT", "LATENT")
+    RETURN_NAMES = ("width", "height", "rescale_factor", "latent")
     OUTPUT_TOOLTIPS = (
-        "Final output width in pixels.",
-        "Final output height in pixels.",
-        "Scale factor calculated from the selected scaling mode.",
-        "Number of latent images created in one batch.",
-        "Empty latent created with the selected size, batch size, and latent type.",
+        "最终输出宽度（像素）。",
+        "最终输出高度（像素）。",
+        "根据所选缩放模式计算的缩放因子。",
+        "包含所选尺寸、批次大小和潜空间类型的空潜空间。批次大小已合并至其中。",
     )
-    DESCRIPTION = "Interactive resolution, scaling, preset, and latent-size helper with optional input-image auto-detection."
+    DESCRIPTION = "交互式分辨率、缩放、预设和潜空间尺寸助手，支持输入图像自动检测。"
     FUNCTION = "main"
-    CATEGORY = "utils/azToolkit"
+    CATEGORY = "utils/分辨率工具 (azToolkit)"
 
     @staticmethod
     def detect_image_dimensions(input_image):
@@ -245,7 +244,7 @@ class ResolutionMaster:
             "batch_size=",
             batch_size,
         )
-        return (width, height, rescale_factor, batch_size, {"samples": latent})
+        return (width, height, rescale_factor, {"samples": latent})
 
 
 register_dimension_routes()
