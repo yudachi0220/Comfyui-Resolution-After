@@ -11,7 +11,7 @@ export const tooltips = {
     widthValueArea: "点击手动输入宽度。",
     heightValueArea: "点击手动输入高度。",
     batchSizeValueArea: "滑动或点击输入每批次创建的图像数量。",
-    latValueArea: "选择潜空间类型。大多数模型使用 4x8，Flux.2 使用 128x16。",
+    latValueArea: "选择潜空间类型。4x8 适用于 WAN/Anima/Z-Image/Qwen，128x16 适用于 LTX2。",
     
     // 缩放控制（仅按钮和下拉框）
     scaleBtn: "按选定的倍率缩放当前尺寸。",

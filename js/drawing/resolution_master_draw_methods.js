@@ -230,7 +230,7 @@ export const drawingMethods = {
 
             // Draw latent type info in smaller gray font below LAT
             if (this.latentTypeWidget) {
-                const latentType = this.latentTypeWidget.value || 'latent_4x8';
+                const latentType = this.latentTypeWidget.value || '';
                 const shortType = String(latentType).replace('latent_', '');
                 ctx.fillStyle = this.hoverElement === 'latValueArea' ? "#999" : "#777"; 
                 ctx.font = "9px Arial";
@@ -681,24 +681,22 @@ export const drawingMethods = {
         const props = this.node.properties;
         const category = props.selectedCategory;
 
-        if (category === "SDXL") {
-            return "💡 SDXL Mode: Uses the closest SDXL preset size.";
-        } else if (category === "Flux") {
-            return "💡 FLUX Mode: Round to: 32px | Edge range: 320-2560px | Max resolution: 4.0 MP";
-        } else if (category === "Flux.2") {
-            return "💡 FLUX.2 Mode: Round to: 16px | Edge range: 320-3840px | Max resolution: 6.0 MP";
-        } else if (category === "WAN" && this.widthWidget && this.heightWidget) {
+        if (category === "WAN" && this.widthWidget && this.heightWidget) {
             const pixels = this.widthWidget.value * this.heightWidget.value;
             const model = pixels < 600000 ? "480p" : "720p";
-            return `💡 WAN Mode: Suggesting ${model} model | Round to: 16px | Resolution range: 320p-820p`;
-        } else if (category === "HiDream Dev") {
-            return "💡 HiDream Dev: Uses the closest HiDream Dev preset size.";
+            return `💡 WAN 模式: 建议使用 ${model} 模型 | 取整: 16px | 分辨率范围: 320p-820p`;
+        } else if (category === "Anima") {
+            return "💡 Anima 模式: 使用最接近的 Anima 预设尺寸。支持 SD 1.5 和 SDXL 基础分辨率。";
+        } else if (category === "ZImageTurbo") {
+            return "💡 Z-Image 模式: 支持 1024/1280/1536 三档基础分辨率，各档位均覆盖完整宽高比。";
         } else if (category === "Qwen-Image") {
-            return "💡 Qwen-Image: Resolution range: ~0.6MP-4.2MP. If input is already in this range, it remains unchanged.";
-        } else if (['Standard', 'Social Media', 'Print', 'Cinema', 'Display Resolutions'].includes(category)) {
-            return "💡 Calc Mode: Uses the closest preset aspect ratio while keeping the size close to your current resolution.";
+            return "💡 Qwen-Image: 分辨率范围: ~0.6MP-4.2MP。若输入已在此范围内，则保持不变。";
+        } else if (category === "LTX2") {
+            return "💡 LTX2 模式: 视频模型推荐分辨率，使用最接近的 LTX2 预设。";
+        } else if (['Social Media', 'Print', 'Cinema', 'Display Resolutions'].includes(category)) {
+            return "💡 计算模式: 使用最接近的预设宽高比，同时保持尺寸接近当前分辨率。";
         }
-        return "⚠️ Calc Mode: Custom calculation not available for this category)";
+        return "⚠️ 计算模式: 此分类暂无自定义计算规则";
     },
 
     getMeasureContext() {

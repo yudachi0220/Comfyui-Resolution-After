@@ -52,7 +52,7 @@ export const DEFAULT_NODE_PROPERTIES = {
     autoResizeOnChange: false,
     autoSnapOnChange: false,
     smartFit: false,
-    selectedCategory: "Standard",
+    selectedCategory: "Anima",
     selectedPreset: null,
     useCustomCalc: false,
     showCalcInfo: false,

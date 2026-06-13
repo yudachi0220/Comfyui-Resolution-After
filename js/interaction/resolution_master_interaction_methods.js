@@ -863,11 +863,11 @@ export const interactionMethods = {
             return;
         }
 
-        const currentValue = this.latentTypeWidget.value || 'latent_4x8';
+        const currentValue = this.latentTypeWidget.value || '';
 
         const latentTypes = [
-            { text: '4x8 (Standard SD/SDXL/Flux)', value: 'latent_4x8' },
-            { text: '128x16 (Flux.2)', value: 'latent_128x16' }
+            { text: '4x8 (WAN / Anima / Z-Image / Qwen)', value: 'latent_4x8' },
+            { text: '128x16 (LTX2)', value: 'latent_128x16' }
         ];
 
         const items = latentTypes.map(type => ({

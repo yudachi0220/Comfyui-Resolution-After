@@ -38,8 +38,8 @@ class ResolutionMaster:
         return {
             "required": {
                 "mode": (
-                    ["手动 (Manual)", "手动滑块 (Manual Sliders)", "常用分辨率 (Common Resolutions)", "宽高比 (Aspect Ratios)"],
-                    {"tooltip": "选择输出尺寸控制方式。手动模式使用分辨率主控画布。"}
+                    ["Manual", "Manual Sliders", "Common Resolutions", "Aspect Ratios"],
+                    {"tooltip": "选择输出尺寸控制方式。手动(Manual)模式使用分辨率主控画布。"}
                 ),
                 "latent_type": (
                     ["latent_4x8", "latent_128x16"],
