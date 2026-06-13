@@ -55,7 +55,8 @@ export const tooltips = {
     actionsHeader: "显示或隐藏操作区域。",
     scalingHeader: "显示或隐藏缩放区域。",
     autoDetectHeader: "显示或隐藏自动检测区域。",
-    presetsHeader: "显示或隐藏预设区域。"
+    presetsHeader: "显示或隐藏预设区域。",
+    batchHeader: "显示或隐藏批次大小设置区域。"
 };
 
 // 预设管理器对话框工具提示

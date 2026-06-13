@@ -338,7 +338,8 @@ export const nodeLifecycleMethods = {
                     scaling: this.properties.section_scaling_collapsed,
                     autoDetect: this.properties.section_autoDetect_collapsed,
                     presets: this.properties.section_presets_collapsed,
-                    extraControls: this.properties.section_extraControls_collapsed
+                    extraControls: this.properties.section_extraControls_collapsed,
+                    batch: this.properties.section_batch_collapsed
                 };
                 self.userPreferredHeight = self.getStoredPreferredHeight();
                 self.applyCompactSlotLabels();

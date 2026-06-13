@@ -28,7 +28,8 @@ class ResolutionMasterCanvas {
             scaling: this.node.properties.section_scaling_collapsed,
             autoDetect: this.node.properties.section_autoDetect_collapsed,
             presets: this.node.properties.section_presets_collapsed,
-            extraControls: this.node.properties.section_extraControls_collapsed
+            extraControls: this.node.properties.section_extraControls_collapsed,
+            batch: this.node.properties.section_batch_collapsed
         };
         this.node.intpos = { x: 0.5, y: 0.5 };
         this.node.capture = false;
